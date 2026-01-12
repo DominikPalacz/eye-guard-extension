@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ustawienia Focus & Eye Guard</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; padding: 40px; color: #333; }
+    .container { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+    h1 { font-size: 24px; margin-bottom: 30px; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
+    
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: 600; margin-bottom: 8px; color: #555; }
+    input[type="number"], input[type="text"] { 
+      width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; 
+    }
+    .hint { font-size: 12px; color: #999; margin-top: 5px; }
+    
+    button {
+      background: #4CAF50; color: white; border: none; padding: 12px 25px; 
+      font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 10px;
+    }
+    button:hover { background: #45a049; }
+    #status-msg { margin-left: 10px; color: #4CAF50; opacity: 0; transition: opacity 0.5s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Konfiguracja Licznika</h1>
+    
+    <div class="form-group">
+      <label>Czas Pracy (minuty)</label>
+      <input type="number" id="workTime" min="1" value="20">
+      <div class="hint">Zalecane: 20 minut</div>
+    </div>
+
+    <div class="form-group">
+      <label>Czas Przerwy (sekundy)</label>
+      <input type="number" id="breakTime" min="10" value="20">
+      <div class="hint">Zalecane: 20 sekund (dla oczu) lub 300 sekund (5 min dla nóg)</div>
+    </div>
+
+    <div class="form-group">
+      <label>Komunikat: Koniec pracy</label>
+      <input type="text" id="workMsg" value="Czas na pracę! Skupienie.">
+    </div>
+
+    <div class="form-group">
+      <label>Komunikat: Koniec przerwy</label>
+      <input type="text" id="breakMsg" value="Zadbaj o oczy! Popatrz w dal.">
+    </div>
+
+    <button id="save">Zapisz ustawienia</button>
+    <span id="status-msg">Zapisano!</span>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
